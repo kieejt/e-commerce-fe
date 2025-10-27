@@ -18,7 +18,7 @@ const Item = ({id,name,image,old_price,new_price}) => {
   };
   
   return (
-    <div className='group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-orange-200'>
+    <div className='group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-orange-200 flex flex-col h-full'>
      <div className='relative overflow-hidden bg-gray-50'>
         {/* Discount Badge */}
         {discountPercentage > 0 && (
@@ -58,31 +58,33 @@ const Item = ({id,name,image,old_price,new_price}) => {
         </Link>
      </div>
      
-     <div className='p-5'>
-        <Link to={`/product/${id}`} onClick={() => window.scrollTo(0, 0)}>
-          <h4 className='font-semibold text-gray-800 hover:text-orange-600 transition-colors duration-300 line-clamp-2 mb-3 leading-tight'>
-            {name}
-          </h4>
-        </Link>
-        
-        <div className='flex items-center justify-between'>
-          <div className='flex items-center gap-2'>
-            {old_price > new_price && (
-              <span className='text-sm text-gray-400 line-through'>
-                ${old_price}
-              </span>
-            )}
-            <span className='text-xl font-bold text-orange-600'>
-              ${new_price}
-            </span>
-          </div>
+     <div className='p-5 flex flex-col h-full'>
+        <div className='flex-grow'>
+          <Link to={`/product/${id}`} onClick={() => window.scrollTo(0, 0)}>
+            <h4 className='font-semibold text-gray-800 hover:text-orange-600 transition-colors duration-300 line-clamp-2 mb-3 leading-tight min-h-[3.5rem]'>
+              {name}
+            </h4>
+          </Link>
           
-          {/* Rating */}
-          <div className='flex items-center gap-1'>
-            <div className='flex text-yellow-400 text-sm'>
-              ★★★★☆
+          <div className='flex items-center justify-between'>
+            <div className='flex items-center gap-2'>
+              {old_price > new_price && (
+                <span className='text-sm text-gray-400 line-through'>
+                  ${old_price}
+                </span>
+              )}
+              <span className='text-xl font-bold text-orange-600'>
+                ${new_price}
+              </span>
             </div>
-            <span className='text-xs text-gray-500'>(4.2)</span>
+            
+            {/* Rating */}
+            <div className='flex items-center gap-1'>
+              <div className='flex text-yellow-400 text-sm'>
+                ★★★★☆
+              </div>
+              <span className='text-xs text-gray-500'>(4.2)</span>
+            </div>
           </div>
         </div>
         
