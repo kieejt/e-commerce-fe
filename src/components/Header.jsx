@@ -42,8 +42,8 @@ const Header = () => {
               <div className="flexBetween gap-x-4">
                 {/* Cart */}
                 <NavLink to={"cart-page"} className={"relative group"}>
-                  <div className="p-2 h-10 w-10 rounded-full bg-gray-50 hover:bg-orange-50 transition-all duration-300 flexCenter">
-                    <FaOpencart className="text-gray-600 group-hover:text-orange-500 transition-colors duration-300"/>
+                  <div className="p-2 h-10 w-10 rounded-full bg-orange-50 hover:bg-gray-50 transition-all duration-300 flexCenter">
+                    <FaOpencart className="text-orange-600 group-hover:text-gray-500 transition-colors duration-300"/>
                   </div>
                   <span className="absolute -top-1 -right-1 flexCenter w-5 h-5 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 text-white text-xs font-semibold shadow-sm">
                     {getTotalCartItems()}
