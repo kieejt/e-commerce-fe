@@ -7,6 +7,7 @@ import Login from "./pages/Login"
 import Product from "./pages/Product"
 import Footer from "./components/Footer"
 import Signup from "./pages/Signup"
+import ScrollToTop from "./components/ScrollToTop"
 
 import bannermens from "./assets/bannermens.png"
 import bannerwomens from "./assets/bannerwomens.png"
@@ -16,6 +17,7 @@ export default function App() {
   return (
     <main className="bg-gradient-to-br from-gray-50 via-white to-orange-50 text-gray-900 min-h-screen">
       <BrowserRouter>
+      <ScrollToTop />
       <Header/>
       <Routes>
         <Route path ="/" element={<Home />}/>

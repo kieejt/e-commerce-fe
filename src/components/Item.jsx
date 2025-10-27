@@ -18,7 +18,7 @@ const Item = ({id,name,image,old_price,new_price}) => {
   };
   
   return (
-    <div className='group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-orange-200 flex flex-col h-full'>
+    <div className='group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-orange-200 grid grid-rows-[auto_1fr_auto] h-full'>
      <div className='relative overflow-hidden bg-gray-50'>
         {/* Discount Badge */}
         {discountPercentage > 0 && (
@@ -41,7 +41,7 @@ const Item = ({id,name,image,old_price,new_price}) => {
         </div>
         
         {/* Product Image */}
-        <Link to={`/product/${id}`} onClick={() => window.scrollTo(0, 0)}>
+        <Link to={`/product/${id}`}>
           <div className='relative h-64 overflow-hidden'>
             <img 
               src={image} 
@@ -58,9 +58,9 @@ const Item = ({id,name,image,old_price,new_price}) => {
         </Link>
      </div>
      
-     <div className='p-5 flex flex-col h-full'>
-        <div className='flex-grow'>
-          <Link to={`/product/${id}`} onClick={() => window.scrollTo(0, 0)}>
+     <div className='p-5 flex flex-col justify-between h-full'>
+        <div>
+          <Link to={`/product/${id}`}>
             <h4 className='font-semibold text-gray-800 hover:text-orange-600 transition-colors duration-300 line-clamp-2 mb-3 leading-tight min-h-[3.5rem]'>
               {name}
             </h4>
